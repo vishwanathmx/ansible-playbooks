@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+   - name: Test test ttest
+     git:
+      repo: 'https://github.com/vishwanathmx/ansible-playbooks.git'
+      dest: /home/centos/xpvishwanath/gitFolder1
+      version: test_br
