@@ -1,0 +1,6 @@
+---
+- name: 1. Install MariaDB server package
+  apt: name=mariadb-server state=present
+
+- name: 2. Start Mysql Service
+  service: name=mysql state=started enabled=true

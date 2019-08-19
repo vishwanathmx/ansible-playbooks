@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become_method: sudo
+  roles:
+    - apache2
+    - mariadb
+    - opsramp

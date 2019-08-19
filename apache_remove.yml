@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  tasks:
+    - name: Stop Tomcat
+      command: sh /opt/tomcat/bin/shutdown.sh
+      become: true
+      become_user: tomcat
+
+    - name: Remove Tomcat
+      file:
+        path: /opt/tomcat
+        state: absent
+
+    - name: remove user "tomcat"
+      user:
+        name: tomcat
+        state: absent
+
+    - name: remove group "tomcat"
+      group:
+        name: tomcat
+        state: absent
